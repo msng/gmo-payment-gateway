@@ -150,14 +150,14 @@ abstract class Api
      */
     private function createResponse($responseText)
     {
-        parse_str($responseText, $returnValues);
+        parse_str($responseText, $responseValues);
 
-        if (array_key_exists(static::ERROR_FLAG, $returnValues)) {
-            $result = new ErrorCollection($returnValues);
+        if (array_key_exists(static::ERROR_FLAG, $responseValues)) {
+            $result = new ErrorCollection($responseValues);
         } else {
             $class = $this->responseClass;
 
-            $result = new $class($returnValues);
+            $result = new $class($responseValues);
         }
 
         return $result;
