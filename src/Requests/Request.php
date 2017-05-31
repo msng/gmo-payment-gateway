@@ -27,8 +27,12 @@ abstract class Request
      *
      * @param array|EntityInterface[] $entities
      */
-    public function __construct(array $entities = [])
+    public function __construct($entities = [])
     {
+        if ($entities instanceof EntityInterface) {
+            $entities = [$entities];
+        }
+
         if (static::$defaultSite) {
             $this->addParams(static::$defaultSite);
         }

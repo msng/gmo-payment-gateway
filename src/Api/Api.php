@@ -2,6 +2,7 @@
 
 namespace Msng\GmoPaymentGateway\Api;
 
+use Msng\GmoPaymentGateway\Collections\ResponseCollection;
 use Msng\GmoPaymentGateway\Configs\ApiConfig;
 use Msng\GmoPaymentGateway\Collections\ErrorCollection;
 use Msng\GmoPaymentGateway\Entities\Entity;
@@ -55,6 +56,10 @@ abstract class Api
      */
     public function __construct(ApiConfig $config = null)
     {
+        if (static::$defaultBaseUri) {
+            $this->setBaseUri(static::$defaultBaseUri);
+        }
+
         if ($config) {
             if ($config->getBaseUri()) {
                 $this->setBaseUri($config->getBaseUri());
@@ -65,9 +70,6 @@ abstract class Api
             }
         }
 
-        if (!$this->httpClient && static::$defaultBaseUri) {
-            $this->setBaseUri(static::$defaultBaseUri);
-        }
     }
 
     /**
@@ -161,6 +163,23 @@ abstract class Api
         }
 
         return $result;
+    }
+
+    /**
+     * @param array $params
+     * @return EntityInterface|ResponseCollection
+     */
+    public static function request($params = [])
+    {
+        $api = new static();
+
+        $requestClass = $api->requestClass;
+        $request = new $requestClass($params);
+
+        $api->setRequest($request);
+        $response = $api->send();
+
+        return $response;
     }
 
 }
