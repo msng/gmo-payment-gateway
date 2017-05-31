@@ -7,6 +7,9 @@ use Msng\GmoPaymentGateway\Interfaces\Entities\EntityInterface;
 
 abstract class Request
 {
+    const REQUIRED = true;
+    const OPTIONAL = false;
+
     /**
      * @var array
      */
@@ -81,7 +84,7 @@ abstract class Request
         $values = $entity->toArray();
 
         foreach ($keys as $key => $required) {
-            if (($required === true) && (!isset($values[$key]) || is_null($values[$key]))) {
+            if (($required === static::REQUIRED) && (!isset($values[$key]) || is_null($values[$key]))) {
                 throw new \DomainException(sprintf('Required param %s for %s is missing.', $key, get_class($this)));
             }
 

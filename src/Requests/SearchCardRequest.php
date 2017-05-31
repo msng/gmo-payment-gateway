@@ -10,15 +10,15 @@ class SearchCardRequest extends Request
 {
     protected $keys = [
         Site::class => [
-            Site::ID => true,
-            Site::PASS => true
+            Site::ID => self::REQUIRED,
+            Site::PASS => self::REQUIRED
         ],
         Member::class => [
-            Member::ID => true
+            Member::ID => self::REQUIRED
         ],
         Card::class => [
-            Card::SEQ_MODE => true,
-            Card::SEQ => false
+            Card::SEQ_MODE => self::REQUIRED,
+            Card::SEQ => self::OPTIONAL
         ]
     ];
 }

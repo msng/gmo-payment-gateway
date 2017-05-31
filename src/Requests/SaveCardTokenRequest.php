@@ -10,14 +10,14 @@ class SaveCardTokenRequest extends Request
 {
     protected $keys = [
         Site::class => [
-            Site::ID => true,
-            Site::PASS => true
+            Site::ID => self::REQUIRED,
+            Site::PASS => self::REQUIRED
         ],
         Member::class => [
-            Member::ID => true
+            Member::ID => self::REQUIRED
         ],
         CardToken::class => [
-            CardToken::TOKEN => true
+            CardToken::TOKEN => self::REQUIRED
         ]
     ];
 }
