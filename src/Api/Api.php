@@ -26,7 +26,7 @@ abstract class Api
     /**
      * @var string
      */
-    protected $path;
+    protected $endPoint;
 
     /**
      * @var string
@@ -133,7 +133,7 @@ abstract class Api
 
         $apiResponse = $this->httpClient->request(
             $this->method,
-            $this->path,
+            $this->endPoint,
             [
                 'form_params' => $request->getParams()
             ]);

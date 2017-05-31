@@ -7,7 +7,7 @@ use Msng\GmoPaymentGateway\Requests\SaveMemberRequest;
 
 class SaveMemberApi extends Api
 {
-    protected $path = '/payment/SaveMember.idPass';
+    protected $endPoint = '/payment/SaveMember.idPass';
 
     protected $requestClass = SaveMemberRequest::class;
 

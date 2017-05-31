@@ -7,7 +7,7 @@ use Msng\GmoPaymentGateway\Requests\SaveCardTokenRequest;
 
 class SaveCardApi extends Api
 {
-    protected $path = '/payment/SaveCard.idPass';
+    protected $endPoint = '/payment/SaveCard.idPass';
 
     protected $requestClass = SaveCardTokenRequest::class;
 

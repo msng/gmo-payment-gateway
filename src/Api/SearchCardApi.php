@@ -7,7 +7,7 @@ use Msng\GmoPaymentGateway\Requests\SearchCardRequest;
 
 class SearchCardApi extends Api
 {
-    protected $path = '/payment/SearchCard.idPass';
+    protected $endPoint = '/payment/SearchCard.idPass';
 
     protected $requestClass = SearchCardRequest::class;
 
