@@ -4,6 +4,7 @@ namespace Msng\GmoPaymentGateway\Api;
 
 use Msng\GmoPaymentGateway\Configs\ApiConfig;
 use Msng\GmoPaymentGateway\Collections\ErrorCollection;
+use Msng\GmoPaymentGateway\Entities\Entity;
 use Msng\GmoPaymentGateway\Interfaces\Entities\EntityInterface;
 use Msng\GmoPaymentGateway\Requests\Request;
 use GuzzleHttp\Client;
@@ -122,7 +123,7 @@ abstract class Api
     /**
      * @param Request $request
      *
-     * @return ErrorCollection
+     * @return Entity|ErrorCollection
      */
     public function send(Request $request = null)
     {
