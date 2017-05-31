@@ -2,7 +2,7 @@
 
 namespace Msng\GmoPaymentGateway\Requests;
 
-use Msng\GmoPaymentGateway\Entities\Entity;
+use Msng\GmoPaymentGateway\Entities\Site;
 use Msng\GmoPaymentGateway\Interfaces\Entities\EntityInterface;
 
 abstract class Request
@@ -18,15 +18,32 @@ abstract class Request
     private $params = [];
 
     /**
+     * @var Site
+     */
+    protected static $defaultSite;
+
+    /**
      * Request constructor.
      *
      * @param array|EntityInterface[] $entities
      */
     public function __construct(array $entities = [])
     {
+        if (static::$defaultSite) {
+            $this->addParams(static::$defaultSite);
+        }
+
         if ($entities) {
             $this->setParams($entities);
         }
+    }
+
+    /**
+     * @param Site $site
+     */
+    public static function setDefaultSite(Site $site)
+    {
+        static::$defaultSite = $site;
     }
 
     /**
@@ -77,7 +94,7 @@ abstract class Request
     }
 
     /**
-     * @param Entity $entity
+     * @param EntityInterface $entity
      * @return array
      */
     private function getKeysForEntity(EntityInterface $entity)
