@@ -12,12 +12,12 @@ class SaveMemberRequest extends Request
      */
     protected $keys = [
         Site::class => [
-            Site::KEY_SITE_ID => true,
-            Site::KEY_SITE_PASS => true
+            Site::ID => true,
+            Site::PASS => true
         ],
         Member::class => [
-            Member::KEY_MEMBER_ID => true,
-            Member::KEY_MEMBER_NAME => false
+            Member::ID => true,
+            Member::NAME => false
         ]
     ];
 

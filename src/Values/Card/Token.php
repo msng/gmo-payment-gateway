@@ -4,7 +4,7 @@ namespace Msng\GmoPaymentGateway\Values\Card;
 
 use Msng\GmoPaymentGateway\Values\Value;
 
-class CardToken extends Value
+class Token extends Value
 {
     protected $maxLength = null;
 }

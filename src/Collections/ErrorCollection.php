@@ -18,8 +18,8 @@ class ErrorCollection extends Collection
             $errorInfo = $errorInfoList[$index];
 
             $errors[] = new Error([
-                Error::KEY_ERROR_CODE => $errorCode,
-                Error::KEY_ERROR_INFO => $errorInfo
+                Error::CODE => $errorCode,
+                Error::INFO => $errorInfo
             ]);
         }
 
