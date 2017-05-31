@@ -7,11 +7,11 @@ use Msng\GmoPaymentGateway\Values\Error\ErrorInfo;
 
 class Error extends Entity
 {
-    const KEY_ERROR_CODE = 'ErrCode';
-    const KEY_ERROR_INFO = 'ErrInfo';
+    const CODE = 'ErrCode';
+    const INFO = 'ErrInfo';
 
     protected $valueMap = [
-        self::KEY_ERROR_CODE => ErrorCode::class,
-        self::KEY_ERROR_INFO => ErrorInfo::class
+        self::CODE => ErrorCode::class,
+        self::INFO => ErrorInfo::class
     ];
 }

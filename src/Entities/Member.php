@@ -7,11 +7,11 @@ use Msng\GmoPaymentGateway\Values\Member\MemberName;
 
 class Member extends Entity
 {
-    const KEY_MEMBER_ID = 'MemberID';
-    const KEY_MEMBER_NAME = 'MemberName';
+    const ID = 'MemberID';
+    const NAME = 'MemberName';
 
     protected $valueMap = [
-        self::KEY_MEMBER_ID => MemberId::class,
-        self::KEY_MEMBER_NAME => MemberName::class
+        self::ID => MemberId::class,
+        self::NAME => MemberName::class
     ];
 }
