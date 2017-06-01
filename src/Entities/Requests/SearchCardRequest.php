@@ -9,16 +9,12 @@ use Msng\GmoPaymentGateway\Entities\Site;
 class SearchCardRequest extends Request
 {
     protected $params = [
-        Site::class => [
-            Site::ID => self::REQUIRED,
-            Site::PASS => self::REQUIRED
-        ],
-        Member::class => [
-            Member::ID => self::REQUIRED
-        ],
-        Card::class => [
-            Card::SEQ_MODE => self::REQUIRED,
-            Card::SEQ => self::OPTIONAL
-        ]
+        Site::ID => self::REQUIRED,
+        Site::PASS => self::REQUIRED,
+
+        Member::ID => self::REQUIRED,
+
+        Card::SEQ_MODE => self::REQUIRED,
+        Card::SEQ => self::OPTIONAL
     ];
 }

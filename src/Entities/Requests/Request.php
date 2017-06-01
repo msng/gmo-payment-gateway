@@ -2,6 +2,7 @@
 
 namespace Msng\GmoPaymentGateway\Entities\Requests;
 
+use Msng\GmoPaymentGateway\Entities\ResourceEntity;
 use Msng\GmoPaymentGateway\Entities\Site;
 use Msng\GmoPaymentGateway\Interfaces\EntityInterface;
 
@@ -32,12 +33,12 @@ abstract class Request
      */
     public function __construct($entities = [])
     {
-        if ($entities instanceof EntityInterface) {
+        if ($entities instanceof ResourceEntity) {
             $entities = [$entities];
         }
 
         if (static::$defaultSite) {
-            $this->addParams(static::$defaultSite);
+            $this->setParam(static::$defaultSite);
         }
 
         if ($entities) {
@@ -61,10 +62,8 @@ abstract class Request
     public function setParams(array $entities)
     {
         foreach ($entities as $entity) {
-            if ($entity instanceof EntityInterface) {
-                if (isset($this->params[get_class($entity)])) {
-                    $this->addParams($entity, $this->getKeysForEntity($entity));
-                }
+            if ($entity instanceof ResourceEntity) {
+                $this->setParam($entity);
             }
         }
 
@@ -72,24 +71,15 @@ abstract class Request
     }
 
     /**
-     * @param EntityInterface $entity
-     * @param array|string[] $requestKeys
+     * @param ResourceEntity $entity
      */
-    public function addParams(EntityInterface $entity, array $requestKeys = null)
+    public function setParam(ResourceEntity $entity)
     {
-        if (is_null($requestKeys)) {
-            $requestKeys = $this->getKeysForEntity($entity);
-        }
-
         $values = $entity->toArray();
 
-        foreach ($requestKeys as $key => $required) {
-            if (($required === static::REQUIRED) && (!isset($values[$key]) || is_null($values[$key]))) {
-                throw new \DomainException(sprintf('Required param %s for %s is missing.', $key, get_class($this)));
-            }
-
-            if (isset($values[$key])) {
-                $this->paramValues[$key] = $values[$key];
+        foreach ($values as $key => $value) {
+            if (isset($this->params[$key])) {
+                $this->paramValues[$key] = $value;
             }
         }
     }
@@ -100,21 +90,6 @@ abstract class Request
     public function getParamValues()
     {
         return $this->paramValues;
-    }
-
-    /**
-     * @param EntityInterface $entity
-     * @return array
-     */
-    private function getKeysForEntity(EntityInterface $entity)
-    {
-        $keys = [];
-
-        if (isset($this->params[get_class($entity)])) {
-            $keys = $this->params[get_class($entity)];
-        }
-
-        return $keys;
     }
 
 }

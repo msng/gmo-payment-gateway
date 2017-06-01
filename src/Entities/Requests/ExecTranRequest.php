@@ -11,23 +11,17 @@ use Msng\GmoPaymentGateway\Entities\Transaction;
 class ExecTranRequest extends Request
 {
     protected $params = [
-        Access::class => [
-            Access::ID => self::REQUIRED,
-            Access::PASS => self::REQUIRED
-        ],
-        Transaction::class => [
-            Transaction::ORDER_ID => self::REQUIRED,
-            Transaction::METHOD => self::REQUIRED
-        ],
-        Site::class => [
-            Site::ID => self::REQUIRED,
-            Site::PASS => self::REQUIRED
-        ],
-        Member::class => [
-            Member::ID => self::REQUIRED
-        ],
-        Card::class => [
-            Card::SEQ => self::REQUIRED
-        ]
+        Access::ID => self::REQUIRED,
+        Access::PASS => self::REQUIRED,
+
+        Transaction::ORDER_ID => self::REQUIRED,
+        Transaction::METHOD => self::REQUIRED,
+
+        Site::ID => self::REQUIRED,
+        Site::PASS => self::REQUIRED,
+
+        Member::ID => self::REQUIRED,
+
+        Card::SEQ => self::REQUIRED,
     ];
 }
