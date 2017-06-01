@@ -1,12 +1,11 @@
 <?php
 
-namespace Msng\GmoPaymentGateway\Requests;
+namespace Msng\GmoPaymentGateway\Entities\Requests;
 
-use Msng\GmoPaymentGateway\Entities\CardToken;
 use Msng\GmoPaymentGateway\Entities\Member;
 use Msng\GmoPaymentGateway\Entities\Site;
 
-class SaveCardTokenRequest extends Request
+class SearchMemberRequest extends Request
 {
     protected $params = [
         Site::class => [
@@ -15,9 +14,6 @@ class SaveCardTokenRequest extends Request
         ],
         Member::class => [
             Member::ID => self::REQUIRED
-        ],
-        CardToken::class => [
-            CardToken::TOKEN => self::REQUIRED
         ]
     ];
 }

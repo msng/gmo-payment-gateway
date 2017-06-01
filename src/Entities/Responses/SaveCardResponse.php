@@ -1,6 +1,6 @@
 <?php
 
-namespace Msng\GmoPaymentGateway\Responses;
+namespace Msng\GmoPaymentGateway\Entities\Responses;
 
 use Msng\GmoPaymentGateway\Entities\Card;
 use Msng\GmoPaymentGateway\Entities\Transaction;
