@@ -2,7 +2,7 @@
 
 namespace Msng\GmoPaymentGateway\Entities;
 
-use Msng\GmoPaymentGateway\Interfaces\Entities\EntityInterface;
+use Msng\GmoPaymentGateway\Interfaces\EntityInterface;
 
 abstract class Entity implements EntityInterface
 {

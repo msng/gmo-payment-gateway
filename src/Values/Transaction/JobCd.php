@@ -2,9 +2,9 @@
 
 namespace Msng\GmoPaymentGateway\Values\Transaction;
 
-use Msng\GmoPaymentGateway\Values\Value;
+use Msng\GmoPaymentGateway\Values\EnumValue;
 
-class JobCd extends Value
+class JobCd extends EnumValue
 {
     // 有効性チェック
     const CHECK = 'CHECK';
@@ -17,11 +17,4 @@ class JobCd extends Value
 
     // 簡易オーソリ
     const SAUTH = 'SAUTH';
-
-    protected $enum = [
-        self::CHECK,
-        self::CAPTURE,
-        self::AUTH,
-        self::SAUTH
-    ];
 }

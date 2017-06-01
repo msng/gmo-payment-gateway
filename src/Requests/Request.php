@@ -3,7 +3,7 @@
 namespace Msng\GmoPaymentGateway\Requests;
 
 use Msng\GmoPaymentGateway\Entities\Site;
-use Msng\GmoPaymentGateway\Interfaces\Entities\EntityInterface;
+use Msng\GmoPaymentGateway\Interfaces\EntityInterface;
 
 abstract class Request
 {

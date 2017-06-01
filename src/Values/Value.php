@@ -2,34 +2,24 @@
 
 namespace Msng\GmoPaymentGateway\Values;
 
-abstract class Value
-{
-    const TYPE_CHAR = 'CHAR';
-    const TYPE_NUMBER = 'NUMBER';
+use Msng\GmoPaymentGateway\Interfaces\ValueInterface;
 
+abstract class Value implements ValueInterface
+{
     /**
      * @var mixed Stores the value
      */
     protected $value;
 
     /**
-     * One of [self::TYPE_CHAR, self::TYPE_NUMBER]
-     *
-     * @var string
+     * @var int|null
      */
-    protected $type = self::TYPE_CHAR;
-
-    /**
-     * @var int
-     */
-    protected $maxLength = 255;
+    protected $maxLength;
 
     /**
      * @var bool
      */
     protected $isMultiByte = false;
-
-    protected $enum = [];
 
     /**
      * @var string The encoding that multi-byte value should be encoded to.
@@ -43,7 +33,7 @@ abstract class Value
 
     public function __construct($value = null)
     {
-        if ( ! is_null($value)) {
+        if (!is_null($value)) {
             $this->setValue($value);
         }
     }
@@ -67,23 +57,21 @@ abstract class Value
     {
         $value = $this->value;
 
-        if ($this->type === self::TYPE_CHAR) {
-            if ($this->isMultiByte) {
-                $value = mb_convert_encoding($value, $this->toEncoding);
-            }
+        if ($this->isMultiByte) {
+            $value = mb_convert_encoding($value, $this->toEncoding);
+        }
 
-            if ($this->trimLength) {
-                $encoding = $this->isMultiByte ? $this->toEncoding : mb_internal_encoding();
+        if ($this->trimLength) {
+            $encoding = $this->isMultiByte ? $this->toEncoding : mb_internal_encoding();
 
-                $value = mb_strcut($value, 0, $this->maxLength, $encoding);
-            }
+            $value = mb_strcut($value, 0, $this->maxLength, $encoding);
         }
 
         return $value;
     }
 
     /**
-     * @param string $value
+     * @param mixed $value
      */
     public function setValue($value)
     {
@@ -100,12 +88,6 @@ abstract class Value
         //When $cutIfLong is true, the value is cut when sent to the API.
         if ($this->lengthValidationRequired() && (strlen($value) > $this->maxLength)) {
             throw new \LengthException(sprintf('Length of %s must be %d or less.', __CLASS__, $this->maxLength));
-        }
-
-        if ($this->isEnum()) {
-            if (!in_array($value, $this->enum)) {
-                throw new \DomainException(sprintf('Value of %s must be one of (%s); "%s" given.', __CLASS__, implode('|', $this->enum), $value));
-            }
         }
     }
 

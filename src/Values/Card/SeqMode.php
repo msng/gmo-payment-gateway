@@ -2,12 +2,10 @@
 
 namespace Msng\GmoPaymentGateway\Values\Card;
 
-use Msng\GmoPaymentGateway\Values\Value;
+use Msng\GmoPaymentGateway\Values\EnumValue;
 
-class SeqMode extends Value
+class SeqMode extends EnumValue
 {
-    const LOGICAL = 0;
-    const PHYSICAL = 1;
-
-    protected $maxLength = 1;
+    const LOGICAL = '0';
+    const PHYSICAL = '1';
 }

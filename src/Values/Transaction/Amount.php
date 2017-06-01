@@ -2,11 +2,9 @@
 
 namespace Msng\GmoPaymentGateway\Values\Transaction;
 
-use Msng\GmoPaymentGateway\Values\Value;
+use Msng\GmoPaymentGateway\Values\IntegerValue;
 
-class Amount extends Value
+class Amount extends IntegerValue
 {
-    protected $type = self::TYPE_NUMBER;
-
     protected $maxLength = 7;
 }
