@@ -7,7 +7,7 @@ use Msng\GmoPaymentGateway\Entities\Site;
 
 class SearchMemberRequest extends Request
 {
-    protected $keys = [
+    protected $params = [
         Site::class => [
             Site::ID => self::REQUIRED,
             Site::PASS => self::REQUIRED

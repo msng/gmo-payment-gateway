@@ -2,13 +2,13 @@
 
 namespace Msng\GmoPaymentGateway\Api;
 
+use GuzzleHttp\Client;
+use Msng\GmoPaymentGateway\Collections\ErrorCollection;
 use Msng\GmoPaymentGateway\Collections\ResponseCollection;
 use Msng\GmoPaymentGateway\Configs\ApiConfig;
-use Msng\GmoPaymentGateway\Collections\ErrorCollection;
 use Msng\GmoPaymentGateway\Entities\Entity;
 use Msng\GmoPaymentGateway\Interfaces\Entities\EntityInterface;
 use Msng\GmoPaymentGateway\Requests\Request;
-use GuzzleHttp\Client;
 
 abstract class Api
 {
@@ -137,7 +137,7 @@ abstract class Api
             $this->method,
             $this->endPoint,
             [
-                'form_params' => $request->getParams()
+                'form_params' => $request->getParamValues()
             ]);
 
         $responseText = $apiResponse->getBody()->getContents();

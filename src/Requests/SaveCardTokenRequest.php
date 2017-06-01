@@ -8,7 +8,7 @@ use Msng\GmoPaymentGateway\Entities\Site;
 
 class SaveCardTokenRequest extends Request
 {
-    protected $keys = [
+    protected $params = [
         Site::class => [
             Site::ID => self::REQUIRED,
             Site::PASS => self::REQUIRED

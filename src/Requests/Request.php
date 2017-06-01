@@ -13,12 +13,12 @@ abstract class Request
     /**
      * @var array
      */
-    protected $keys = [];
+    protected $params = [];
 
     /**
      * @var array
      */
-    private $params = [];
+    private $paramValues = [];
 
     /**
      * @var Site
@@ -62,7 +62,7 @@ abstract class Request
     {
         foreach ($entities as $entity) {
             if ($entity instanceof EntityInterface) {
-                if (isset($this->keys[get_class($entity)])) {
+                if (isset($this->params[get_class($entity)])) {
                     $this->addParams($entity, $this->getKeysForEntity($entity));
                 }
             }
@@ -88,16 +88,16 @@ abstract class Request
                 throw new \DomainException(sprintf('Required param %s for %s is missing.', $key, get_class($this)));
             }
 
-            $this->params[$key] = $values[$key];
+            $this->paramValues[$key] = $values[$key];
         }
     }
 
     /**
      * @return array
      */
-    public function getParams()
+    public function getParamValues()
     {
-        return $this->params;
+        return $this->paramValues;
     }
 
     /**
@@ -108,8 +108,8 @@ abstract class Request
     {
         $keys = [];
 
-        if (isset($this->keys[get_class($entity)])) {
-            $keys = $this->keys[get_class($entity)];
+        if (isset($this->params[get_class($entity)])) {
+            $keys = $this->params[get_class($entity)];
         }
 
         return $keys;

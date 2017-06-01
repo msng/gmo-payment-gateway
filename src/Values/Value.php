@@ -29,6 +29,8 @@ abstract class Value
      */
     protected $isMultiByte = false;
 
+    protected $enum = [];
+
     /**
      * @var string The encoding that multi-byte value should be encoded to.
      */
@@ -99,6 +101,12 @@ abstract class Value
         if ($this->lengthValidationRequired() && (strlen($value) > $this->maxLength)) {
             throw new \LengthException(sprintf('Length of %s must be %d or less.', __CLASS__, $this->maxLength));
         }
+
+        if ($this->isEnum()) {
+            if (!in_array($value, $this->enum)) {
+                throw new \DomainException(sprintf('Value of %s must be one of (%s); "%s" given.', __CLASS__, implode('|', $this->enum), $value));
+            }
+        }
     }
 
     /**
@@ -110,9 +118,23 @@ abstract class Value
             return false;
         } elseif (is_null($this->maxLength)) {
             return false;
+        } elseif ($this->isEnum()) {
+            return false;
         }
 
         return true;
+    }
+
+    /**
+     * @return bool
+     */
+    private function isEnum()
+    {
+        if (empty($this->enum)) {
+            return false;
+        } else {
+            return true;
+        }
     }
 
 }

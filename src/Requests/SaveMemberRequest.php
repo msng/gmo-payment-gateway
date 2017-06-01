@@ -10,7 +10,7 @@ class SaveMemberRequest extends Request
     /**
      * @var array Parameters to send to the API request; set the value true if the param is required.
      */
-    protected $keys = [
+    protected $params = [
         Site::class => [
             Site::ID => self::REQUIRED,
             Site::PASS => self::REQUIRED

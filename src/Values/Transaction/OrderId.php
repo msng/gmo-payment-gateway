@@ -1,6 +1,6 @@
 <?php
 
-namespace Msng\GmoPaymentGateway\Values\Order;
+namespace Msng\GmoPaymentGateway\Values\Transaction;
 
 use Msng\GmoPaymentGateway\Values\Value;
 
