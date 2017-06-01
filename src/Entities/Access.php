@@ -14,4 +14,5 @@ class Access extends Entity
         self::ID => AccessId::class,
         self::PASS => AccessPass::class
     ];
+
 }

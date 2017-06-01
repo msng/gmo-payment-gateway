@@ -2,7 +2,7 @@
 
 namespace Msng\GmoPaymentGateway\Api;
 
-use Msng\GmoPaymentGateway\Entities\Card;
+use Msng\GmoPaymentGateway\Entities\Response\SaveCardResponse;
 use Msng\GmoPaymentGateway\Requests\SaveCardTokenRequest;
 
 class SaveCardApi extends Api
@@ -11,5 +11,5 @@ class SaveCardApi extends Api
 
     protected $requestClass = SaveCardTokenRequest::class;
 
-    protected $responseClass = Card::class;
+    protected $responseClass = SaveCardResponse::class;
 }

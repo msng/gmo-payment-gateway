@@ -2,7 +2,7 @@
 
 namespace Msng\GmoPaymentGateway\Api;
 
-use Msng\GmoPaymentGateway\Entities\Member;
+use Msng\GmoPaymentGateway\Entities\Response\SearchMemberResponse;
 use Msng\GmoPaymentGateway\Requests\SearchMemberRequest;
 
 class SearchMemberApi extends Api
@@ -11,5 +11,5 @@ class SearchMemberApi extends Api
 
     protected $requestClass = SearchMemberRequest::class;
 
-    protected $responseClass = Member::class;
+    protected $responseClass = SearchMemberResponse::class;
 }

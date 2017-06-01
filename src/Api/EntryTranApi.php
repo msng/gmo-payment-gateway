@@ -2,7 +2,7 @@
 
 namespace Msng\GmoPaymentGateway\Api;
 
-use Msng\GmoPaymentGateway\Entities\Access;
+use Msng\GmoPaymentGateway\Entities\Response\EntryTranResponse;
 use Msng\GmoPaymentGateway\Requests\EntryTranRequest;
 
 class EntryTranApi extends Api
@@ -11,5 +11,5 @@ class EntryTranApi extends Api
 
     protected $requestClass = EntryTranRequest::class;
 
-    protected $responseClass = Access::class;
+    protected $responseClass = EntryTranResponse::class;
 }

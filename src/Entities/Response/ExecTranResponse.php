@@ -2,7 +2,6 @@
 
 namespace Msng\GmoPaymentGateway\Entities\Response;
 
-use Msng\GmoPaymentGateway\Entities\Entity;
 use Msng\GmoPaymentGateway\Entities\Transaction;
 use Msng\GmoPaymentGateway\Values\Transaction\Approve;
 use Msng\GmoPaymentGateway\Values\Transaction\CheckString;
@@ -11,7 +10,7 @@ use Msng\GmoPaymentGateway\Values\Transaction\Method;
 use Msng\GmoPaymentGateway\Values\Transaction\OrderId;
 use Msng\GmoPaymentGateway\Values\Transaction\TranDate;
 
-class ExecTranResponse extends Entity
+class ExecTranResponse extends Response
 {
     protected $valueMap = array(
         Transaction::ORDER_ID => OrderId::class,

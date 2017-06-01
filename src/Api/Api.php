@@ -6,8 +6,7 @@ use GuzzleHttp\Client;
 use Msng\GmoPaymentGateway\Collections\ErrorCollection;
 use Msng\GmoPaymentGateway\Collections\ResponseCollection;
 use Msng\GmoPaymentGateway\Configs\ApiConfig;
-use Msng\GmoPaymentGateway\Entities\Entity;
-use Msng\GmoPaymentGateway\Interfaces\Entities\EntityInterface;
+use Msng\GmoPaymentGateway\Entities\Response\Response;
 use Msng\GmoPaymentGateway\Requests\Request;
 
 abstract class Api
@@ -125,7 +124,7 @@ abstract class Api
     /**
      * @param Request $request
      *
-     * @return Entity|ErrorCollection
+     * @return ResponseCollection|Response
      */
     public function send(Request $request = null)
     {
@@ -148,7 +147,7 @@ abstract class Api
 
     /**
      * @param $responseText
-     * @return ErrorCollection|EntityInterface
+     * @return Response|ResponseCollection
      */
     private function createResponse($responseText)
     {
@@ -167,7 +166,7 @@ abstract class Api
 
     /**
      * @param array $params
-     * @return EntityInterface|ResponseCollection
+     * @return Response|ResponseCollection
      */
     public static function request($params = [])
     {
