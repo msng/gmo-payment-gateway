@@ -3,6 +3,7 @@
 namespace Msng\GmoPaymentGateway\Api;
 
 use GuzzleHttp\Client;
+use Msng\GmoPaymentGateway\Entities\Error;
 use Msng\GmoPaymentGateway\Entities\Requests\Request;
 use Msng\GmoPaymentGateway\Entities\Responses\ErrorCollection;
 use Msng\GmoPaymentGateway\Entities\Responses\Response;
@@ -118,15 +119,23 @@ abstract class Api
             $request = $this->request;
         }
 
-        $apiResponse = $this->httpClient->request(
-            $this->method,
-            $this->endPoint,
-            [
-                'form_params' => $request->getParamValues()
+        if (!$request->isReady()) {
+            $response = new ErrorCollection([
+                Error::CODE => 'X01',
+                Error::INFO => 'X00000001'
             ]);
+        } else {
 
-        $responseText = $apiResponse->getBody()->getContents();
-        $response = $this->createResponse($responseText);
+            $apiResponse = $this->httpClient->request(
+                $this->method,
+                $this->endPoint,
+                [
+                    'form_params' => $request->getParamValues()
+                ]);
+
+            $responseText = $apiResponse->getBody()->getContents();
+            $response = $this->createResponse($responseText);
+        }
 
         return $response;
     }

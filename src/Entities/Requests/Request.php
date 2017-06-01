@@ -92,4 +92,17 @@ abstract class Request
         return $this->paramValues;
     }
 
+    /**
+     * @return bool
+     */
+    public function isReady()
+    {
+        foreach ($this->params as $key => $isRequired) {
+            if ($isRequired === self::REQUIRED && !isset($this->paramValues[$key])) {
+                return false;
+            }
+        }
+
+        return true;
+    }
 }
