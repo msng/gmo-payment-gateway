@@ -1,6 +1,6 @@
 <?php
 
-namespace Msng\GmoPaymentGateway\Collections;
+namespace Msng\GmoPaymentGateway\Responses;
 
 use Msng\GmoPaymentGateway\Entities\Error;
 

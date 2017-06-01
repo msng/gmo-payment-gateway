@@ -2,8 +2,8 @@
 
 namespace Msng\GmoPaymentGateway\Api;
 
-use Msng\GmoPaymentGateway\Entities\Response\SaveCardResponse;
 use Msng\GmoPaymentGateway\Requests\SaveMemberRequest;
+use Msng\GmoPaymentGateway\Responses\SaveCardResponse;
 
 class SaveMemberApi extends Api
 {

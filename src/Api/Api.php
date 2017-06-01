@@ -3,10 +3,10 @@
 namespace Msng\GmoPaymentGateway\Api;
 
 use GuzzleHttp\Client;
-use Msng\GmoPaymentGateway\Collections\ErrorCollection;
-use Msng\GmoPaymentGateway\Collections\ResponseCollection;
-use Msng\GmoPaymentGateway\Entities\Response\Response;
 use Msng\GmoPaymentGateway\Requests\Request;
+use Msng\GmoPaymentGateway\Responses\ErrorCollection;
+use Msng\GmoPaymentGateway\Responses\Response;
+use Msng\GmoPaymentGateway\Responses\ResponseCollection;
 
 abstract class Api
 {

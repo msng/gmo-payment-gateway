@@ -2,8 +2,8 @@
 
 namespace Msng\GmoPaymentGateway\Api;
 
-use Msng\GmoPaymentGateway\Entities\Response\EntryTranResponse;
 use Msng\GmoPaymentGateway\Requests\EntryTranRequest;
+use Msng\GmoPaymentGateway\Responses\EntryTranResponse;
 
 class EntryTranApi extends Api
 {

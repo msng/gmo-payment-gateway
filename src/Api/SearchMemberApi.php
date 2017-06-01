@@ -2,8 +2,8 @@
 
 namespace Msng\GmoPaymentGateway\Api;
 
-use Msng\GmoPaymentGateway\Entities\Response\SearchMemberResponse;
 use Msng\GmoPaymentGateway\Requests\SearchMemberRequest;
+use Msng\GmoPaymentGateway\Responses\SearchMemberResponse;
 
 class SearchMemberApi extends Api
 {

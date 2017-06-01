@@ -73,22 +73,24 @@ abstract class Request
 
     /**
      * @param EntityInterface $entity
-     * @param array|string[] $keys
+     * @param array|string[] $requestKeys
      */
-    public function addParams(EntityInterface $entity, array $keys = null)
+    public function addParams(EntityInterface $entity, array $requestKeys = null)
     {
-        if (is_null($keys)) {
-            $keys = $this->getKeysForEntity($entity);
+        if (is_null($requestKeys)) {
+            $requestKeys = $this->getKeysForEntity($entity);
         }
 
         $values = $entity->toArray();
 
-        foreach ($keys as $key => $required) {
+        foreach ($requestKeys as $key => $required) {
             if (($required === static::REQUIRED) && (!isset($values[$key]) || is_null($values[$key]))) {
                 throw new \DomainException(sprintf('Required param %s for %s is missing.', $key, get_class($this)));
             }
 
-            $this->paramValues[$key] = $values[$key];
+            if (isset($values[$key])) {
+                $this->paramValues[$key] = $values[$key];
+            }
         }
     }
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Msng\GmoPaymentGateway\Collections;
+namespace Msng\GmoPaymentGateway\Responses;
 
 use Illuminate\Support\Collection;
 
