@@ -5,7 +5,6 @@ namespace Msng\GmoPaymentGateway\Api;
 use GuzzleHttp\Client;
 use Msng\GmoPaymentGateway\Collections\ErrorCollection;
 use Msng\GmoPaymentGateway\Collections\ResponseCollection;
-use Msng\GmoPaymentGateway\Configs\ApiConfig;
 use Msng\GmoPaymentGateway\Entities\Response\Response;
 use Msng\GmoPaymentGateway\Requests\Request;
 
@@ -50,25 +49,12 @@ abstract class Api
 
     /**
      * Api constructor.
-     *
-     * @param ApiConfig $config
      */
-    public function __construct(ApiConfig $config = null)
+    public function __construct()
     {
         if (static::$defaultBaseUri) {
             $this->setBaseUri(static::$defaultBaseUri);
         }
-
-        if ($config) {
-            if ($config->getBaseUri()) {
-                $this->setBaseUri($config->getBaseUri());
-            }
-
-            if ($config->getRequest()) {
-                $this->setRequest($config->getRequest());
-            }
-        }
-
     }
 
     /**
