@@ -2,7 +2,7 @@
 
 namespace Msng\GmoPaymentGateway\Api;
 
-use Msng\GmoPaymentGateway\Entities\TransactionResponse;
+use Msng\GmoPaymentGateway\Entities\Response\ExecTranResponse;
 use Msng\GmoPaymentGateway\Requests\ExecTranRequest;
 
 class ExecTranApi extends Api
@@ -11,5 +11,5 @@ class ExecTranApi extends Api
 
     protected $requestClass = ExecTranRequest::class;
 
-    protected $responseClass = TransactionResponse::class;
+    protected $responseClass = ExecTranResponse::class;
 }
