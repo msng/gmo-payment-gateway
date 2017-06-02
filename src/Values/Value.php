@@ -1,8 +1,8 @@
 <?php
 
-namespace Msng\GmoPaymentGateway\Values;
+namespace msng\GmoPaymentGateway\Values;
 
-use Msng\GmoPaymentGateway\Interfaces\ValueInterface;
+use msng\GmoPaymentGateway\Interfaces\ValueInterface;
 
 abstract class Value implements ValueInterface
 {

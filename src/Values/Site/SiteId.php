@@ -1,8 +1,8 @@
 <?php
 
-namespace Msng\GmoPaymentGateway\Values\Site;
+namespace msng\GmoPaymentGateway\Values\Site;
 
-use Msng\GmoPaymentGateway\Values\Value;
+use msng\GmoPaymentGateway\Values\Value;
 
 class SiteId extends Value
 {

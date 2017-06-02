@@ -1,8 +1,8 @@
 <?php
 
-namespace Msng\GmoPaymentGateway\Values\Transaction;
+namespace msng\GmoPaymentGateway\Values\Transaction;
 
-use Msng\GmoPaymentGateway\Values\Value;
+use msng\GmoPaymentGateway\Values\Value;
 
 class Forward extends Value
 {

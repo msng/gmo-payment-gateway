@@ -1,9 +1,9 @@
 <?php
 
-namespace Msng\GmoPaymentGateway\Api;
+namespace msng\GmoPaymentGateway\Api;
 
-use Msng\GmoPaymentGateway\Entities\Requests\EntryTranRequest;
-use Msng\GmoPaymentGateway\Entities\Responses\EntryTranResponse;
+use msng\GmoPaymentGateway\Entities\Requests\EntryTranRequest;
+use msng\GmoPaymentGateway\Entities\Responses\EntryTranResponse;
 
 class EntryTranApi extends Api
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace Msng\GmoPaymentGateway\Values\Transaction;
+namespace msng\GmoPaymentGateway\Values\Transaction;
 
-use Msng\GmoPaymentGateway\Values\EnumValue;
+use msng\GmoPaymentGateway\Values\EnumValue;
 
 class Method extends EnumValue
 {

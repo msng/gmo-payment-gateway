@@ -1,8 +1,8 @@
 <?php
 
-namespace Msng\GmoPaymentGateway\Values\Card;
+namespace msng\GmoPaymentGateway\Values\Card;
 
-use Msng\GmoPaymentGateway\Values\Value;
+use msng\GmoPaymentGateway\Values\Value;
 
 class DeleteFlag extends Value
 {

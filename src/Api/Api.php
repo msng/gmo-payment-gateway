@@ -1,13 +1,13 @@
 <?php
 
-namespace Msng\GmoPaymentGateway\Api;
+namespace msng\GmoPaymentGateway\Api;
 
 use GuzzleHttp\Client;
-use Msng\GmoPaymentGateway\Entities\Error;
-use Msng\GmoPaymentGateway\Entities\Requests\Request;
-use Msng\GmoPaymentGateway\Entities\Responses\ErrorCollection;
-use Msng\GmoPaymentGateway\Entities\Responses\Response;
-use Msng\GmoPaymentGateway\Entities\Responses\ResponseCollection;
+use msng\GmoPaymentGateway\Entities\Error;
+use msng\GmoPaymentGateway\Entities\Requests\Request;
+use msng\GmoPaymentGateway\Entities\Responses\ErrorCollection;
+use msng\GmoPaymentGateway\Entities\Responses\Response;
+use msng\GmoPaymentGateway\Entities\Responses\ResponseCollection;
 
 abstract class Api
 {

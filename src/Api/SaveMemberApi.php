@@ -1,9 +1,9 @@
 <?php
 
-namespace Msng\GmoPaymentGateway\Api;
+namespace msng\GmoPaymentGateway\Api;
 
-use Msng\GmoPaymentGateway\Entities\Requests\SaveMemberRequest;
-use Msng\GmoPaymentGateway\Entities\Responses\SaveCardResponse;
+use msng\GmoPaymentGateway\Entities\Requests\SaveMemberRequest;
+use msng\GmoPaymentGateway\Entities\Responses\SaveCardResponse;
 
 class SaveMemberApi extends Api
 {

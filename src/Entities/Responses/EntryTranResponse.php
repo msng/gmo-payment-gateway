@@ -1,8 +1,8 @@
 <?php
 
-namespace Msng\GmoPaymentGateway\Entities\Responses;
+namespace msng\GmoPaymentGateway\Entities\Responses;
 
-use Msng\GmoPaymentGateway\Entities\Access;
+use msng\GmoPaymentGateway\Entities\Access;
 
 class EntryTranResponse extends Response
 {

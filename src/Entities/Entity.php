@@ -1,10 +1,10 @@
 <?php
 
-namespace Msng\GmoPaymentGateway\Entities;
+namespace msng\GmoPaymentGateway\Entities;
 
-use Msng\GmoPaymentGateway\Configs\ValueMap;
-use Msng\GmoPaymentGateway\Interfaces\EntityInterface;
-use Msng\GmoPaymentGateway\Values\Value;
+use msng\GmoPaymentGateway\Configs\ValueMap;
+use msng\GmoPaymentGateway\Interfaces\EntityInterface;
+use msng\GmoPaymentGateway\Values\Value;
 
 abstract class Entity implements EntityInterface
 {

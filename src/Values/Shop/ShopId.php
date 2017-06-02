@@ -1,8 +1,8 @@
 <?php
 
-namespace Msng\GmoPaymentGateway\Values\Shop;
+namespace msng\GmoPaymentGateway\Values\Shop;
 
-use Msng\GmoPaymentGateway\Values\Value;
+use msng\GmoPaymentGateway\Values\Value;
 
 class ShopId extends Value
 {

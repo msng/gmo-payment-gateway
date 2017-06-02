@@ -1,12 +1,12 @@
 <?php
 
-namespace Msng\GmoPaymentGateway\Entities\Requests;
+namespace msng\GmoPaymentGateway\Entities\Requests;
 
-use Msng\GmoPaymentGateway\Entities\Access;
-use Msng\GmoPaymentGateway\Entities\Card;
-use Msng\GmoPaymentGateway\Entities\Member;
-use Msng\GmoPaymentGateway\Entities\Site;
-use Msng\GmoPaymentGateway\Entities\Transaction;
+use msng\GmoPaymentGateway\Entities\Access;
+use msng\GmoPaymentGateway\Entities\Card;
+use msng\GmoPaymentGateway\Entities\Member;
+use msng\GmoPaymentGateway\Entities\Site;
+use msng\GmoPaymentGateway\Entities\Transaction;
 
 class ExecTranRequest extends Request
 {

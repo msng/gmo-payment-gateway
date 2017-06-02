@@ -1,9 +1,9 @@
 <?php
 
-namespace Msng\GmoPaymentGateway\Entities\Responses;
+namespace msng\GmoPaymentGateway\Entities\Responses;
 
-use Msng\GmoPaymentGateway\Entities\Card;
-use Msng\GmoPaymentGateway\Entities\Transaction;
+use msng\GmoPaymentGateway\Entities\Card;
+use msng\GmoPaymentGateway\Entities\Transaction;
 
 class SaveCardResponse extends Response
 {

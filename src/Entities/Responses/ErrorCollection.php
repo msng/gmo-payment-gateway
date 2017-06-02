@@ -1,8 +1,8 @@
 <?php
 
-namespace Msng\GmoPaymentGateway\Entities\Responses;
+namespace msng\GmoPaymentGateway\Entities\Responses;
 
-use Msng\GmoPaymentGateway\Entities\Error;
+use msng\GmoPaymentGateway\Entities\Error;
 
 class ErrorCollection extends ResponseCollection
 {

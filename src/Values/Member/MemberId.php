@@ -1,8 +1,8 @@
 <?php
 
-namespace Msng\GmoPaymentGateway\Values\Member;
+namespace msng\GmoPaymentGateway\Values\Member;
 
-use Msng\GmoPaymentGateway\Values\Value;
+use msng\GmoPaymentGateway\Values\Value;
 
 class MemberId extends Value
 {

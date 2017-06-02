@@ -1,6 +1,6 @@
 <?php
 
-namespace Msng\GmoPaymentGateway\Interfaces;
+namespace msng\GmoPaymentGateway\Interfaces;
 
 interface EntityInterface
 {

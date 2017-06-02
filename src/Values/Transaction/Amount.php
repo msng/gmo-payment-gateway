@@ -1,8 +1,8 @@
 <?php
 
-namespace Msng\GmoPaymentGateway\Values\Transaction;
+namespace msng\GmoPaymentGateway\Values\Transaction;
 
-use Msng\GmoPaymentGateway\Values\IntegerValue;
+use msng\GmoPaymentGateway\Values\IntegerValue;
 
 class Amount extends IntegerValue
 {

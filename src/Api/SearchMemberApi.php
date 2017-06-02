@@ -1,9 +1,9 @@
 <?php
 
-namespace Msng\GmoPaymentGateway\Api;
+namespace msng\GmoPaymentGateway\Api;
 
-use Msng\GmoPaymentGateway\Entities\Requests\SearchMemberRequest;
-use Msng\GmoPaymentGateway\Entities\Responses\SearchMemberResponse;
+use msng\GmoPaymentGateway\Entities\Requests\SearchMemberRequest;
+use msng\GmoPaymentGateway\Entities\Responses\SearchMemberResponse;
 
 class SearchMemberApi extends Api
 {

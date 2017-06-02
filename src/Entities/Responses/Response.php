@@ -1,8 +1,8 @@
 <?php
 
-namespace Msng\GmoPaymentGateway\Entities\Responses;
+namespace msng\GmoPaymentGateway\Entities\Responses;
 
-use Msng\GmoPaymentGateway\Entities\Entity;
+use msng\GmoPaymentGateway\Entities\Entity;
 
 abstract class Response extends Entity
 {

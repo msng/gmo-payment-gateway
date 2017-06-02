@@ -1,10 +1,10 @@
 <?php
 
-namespace Msng\GmoPaymentGateway\Entities\Requests;
+namespace msng\GmoPaymentGateway\Entities\Requests;
 
-use Msng\GmoPaymentGateway\Entities\ResourceEntity;
-use Msng\GmoPaymentGateway\Entities\Site;
-use Msng\GmoPaymentGateway\Interfaces\EntityInterface;
+use msng\GmoPaymentGateway\Entities\ResourceEntity;
+use msng\GmoPaymentGateway\Entities\Site;
+use msng\GmoPaymentGateway\Interfaces\EntityInterface;
 
 abstract class Request
 {

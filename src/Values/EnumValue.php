@@ -1,6 +1,6 @@
 <?php
 
-namespace Msng\GmoPaymentGateway\Values;
+namespace msng\GmoPaymentGateway\Values;
 
 abstract class EnumValue extends Value
 {

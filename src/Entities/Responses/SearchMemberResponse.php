@@ -1,8 +1,8 @@
 <?php
 
-namespace Msng\GmoPaymentGateway\Entities\Responses;
+namespace msng\GmoPaymentGateway\Entities\Responses;
 
-use Msng\GmoPaymentGateway\Entities\Member;
+use msng\GmoPaymentGateway\Entities\Member;
 
 class SearchMemberResponse extends Response
 {

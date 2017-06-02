@@ -1,9 +1,9 @@
 <?php
 
-namespace Msng\GmoPaymentGateway\Entities\Requests;
+namespace msng\GmoPaymentGateway\Entities\Requests;
 
-use Msng\GmoPaymentGateway\Entities\Member;
-use Msng\GmoPaymentGateway\Entities\Site;
+use msng\GmoPaymentGateway\Entities\Member;
+use msng\GmoPaymentGateway\Entities\Site;
 
 class SearchMemberRequest extends Request
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace Msng\GmoPaymentGateway\Api;
+namespace msng\GmoPaymentGateway\Api;
 
-use Msng\GmoPaymentGateway\Entities\Requests\ExecTranRequest;
-use Msng\GmoPaymentGateway\Entities\Responses\ExecTranResponse;
+use msng\GmoPaymentGateway\Entities\Requests\ExecTranRequest;
+use msng\GmoPaymentGateway\Entities\Responses\ExecTranResponse;
 
 class ExecTranApi extends Api
 {

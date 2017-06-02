@@ -1,9 +1,9 @@
 <?php
 
-namespace Msng\GmoPaymentGateway\Entities\Requests;
+namespace msng\GmoPaymentGateway\Entities\Requests;
 
-use Msng\GmoPaymentGateway\Entities\Shop;
-use Msng\GmoPaymentGateway\Entities\Transaction;
+use msng\GmoPaymentGateway\Entities\Shop;
+use msng\GmoPaymentGateway\Entities\Transaction;
 
 class EntryTranRequest extends Request
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Msng\GmoPaymentGateway\Entities;
+namespace msng\GmoPaymentGateway\Entities;
 
 class Error extends ResourceEntity
 {

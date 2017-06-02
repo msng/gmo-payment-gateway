@@ -1,8 +1,8 @@
 <?php
 
-namespace Msng\GmoPaymentGateway\Values\Card;
+namespace msng\GmoPaymentGateway\Values\Card;
 
-use Msng\GmoPaymentGateway\Values\EnumValue;
+use msng\GmoPaymentGateway\Values\EnumValue;
 
 class DefaultFlag extends EnumValue
 {
