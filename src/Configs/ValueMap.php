@@ -4,6 +4,7 @@ namespace msng\GmoPaymentGateway\Configs;
 
 use msng\GmoPaymentGateway\Entities\Access;
 use msng\GmoPaymentGateway\Entities\Card;
+use msng\GmoPaymentGateway\Entities\CardToken;
 use msng\GmoPaymentGateway\Entities\Error;
 use msng\GmoPaymentGateway\Entities\Member;
 use msng\GmoPaymentGateway\Entities\Shop;
@@ -19,6 +20,7 @@ use msng\GmoPaymentGateway\Values\Card\DeleteFlag;
 use msng\GmoPaymentGateway\Values\Card\Expire;
 use msng\GmoPaymentGateway\Values\Card\HolderName;
 use msng\GmoPaymentGateway\Values\Card\SeqMode;
+use msng\GmoPaymentGateway\Values\Card\Token;
 use msng\GmoPaymentGateway\Values\Error\ErrorCode;
 use msng\GmoPaymentGateway\Values\Error\ErrorInfo;
 use msng\GmoPaymentGateway\Values\Member\MemberId;
@@ -52,6 +54,8 @@ class ValueMap
         Card::EXPIRE => Expire::class,
         Card::HOLDER_NAME => HolderName::class,
         Card::DELETE_FLAG => DeleteFlag::class,
+
+        CardToken::TOKEN => Token::class,
 
         Error::CODE => ErrorCode::class,
         Error::INFO => ErrorInfo::class,
