@@ -3,7 +3,7 @@
 namespace msng\GmoPaymentGateway\Api;
 
 use msng\GmoPaymentGateway\Entities\Requests\SaveMemberRequest;
-use msng\GmoPaymentGateway\Entities\Responses\SaveCardResponse;
+use msng\GmoPaymentGateway\Entities\Responses\SaveMemberResponse;
 
 class SaveMemberApi extends Api
 {
@@ -11,5 +11,5 @@ class SaveMemberApi extends Api
 
     protected $requestClass = SaveMemberRequest::class;
 
-    protected $responseClass = SaveCardResponse::class;
+    protected $responseClass = SaveMemberResponse::class;
 }
