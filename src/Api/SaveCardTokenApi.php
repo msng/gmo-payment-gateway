@@ -2,14 +2,14 @@
 
 namespace msng\GmoPaymentGateway\Api;
 
-use msng\GmoPaymentGateway\Entities\Requests\SaveCardRequest;
+use msng\GmoPaymentGateway\Entities\Requests\SaveCardTokenRequest;
 use msng\GmoPaymentGateway\Entities\Responses\SaveCardResponse;
 
-class SaveCardApi extends Api
+class SaveCardTokenApi extends Api
 {
     protected $endPoint = '/payment/SaveCard.idPass';
 
-    protected $requestClass = SaveCardRequest::class;
+    protected $requestClass = SaveCardTokenRequest::class;
 
     protected $responseClass = SaveCardResponse::class;
 }
