@@ -13,6 +13,7 @@ class EntryTranRequest extends Request
 
         Transaction::ORDER_ID => self::REQUIRED,
         Transaction::JOB_CD => self::REQUIRED,
-        Transaction::AMOUNT => self::REQUIRED
+        Transaction::AMOUNT => self::REQUIRED,
+	    Transaction::TAX => self::OPTIONAL
     ];
 }

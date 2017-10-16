@@ -5,6 +5,7 @@ namespace msng\GmoPaymentGateway\Entities;
 class Transaction extends ResourceEntity
 {
     const AMOUNT = 'Amount';
+    const TAX = 'Tax';
     const APPROVE = 'Approve';
     const CHECK_STRING = 'CheckString';
     const FORWARD = 'Forward';

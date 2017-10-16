@@ -36,6 +36,7 @@ use msng\GmoPaymentGateway\Values\Transaction\Forward;
 use msng\GmoPaymentGateway\Values\Transaction\JobCd;
 use msng\GmoPaymentGateway\Values\Transaction\Method;
 use msng\GmoPaymentGateway\Values\Transaction\OrderId;
+use msng\GmoPaymentGateway\Values\Transaction\Tax;
 use msng\GmoPaymentGateway\Values\Transaction\TranDate;
 use msng\GmoPaymentGateway\Values\Transaction\TranId;
 
@@ -76,6 +77,7 @@ class ValueMap
         Transaction::JOB_CD => JobCd::class,
         Transaction::METHOD => Method::class,
         Transaction::ORDER_ID => OrderId::class,
+	    Transaction::TAX => Tax::class,
         Transaction::TRAN_DATE => TranDate::class,
         Transaction::TRAN_ID => TranId::class,
     ];
