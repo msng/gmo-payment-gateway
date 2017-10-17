@@ -10,6 +10,8 @@ abstract class ResponseCollection extends Collection
 
     protected $itemClass;
 
+    protected $isError = false;
+
     public function __construct(array $responseValues = [])
     {
         $items = [];
@@ -41,6 +43,14 @@ abstract class ResponseCollection extends Collection
         }
 
         return $result;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isError()
+    {
+        return $this->isError;
     }
 
 }

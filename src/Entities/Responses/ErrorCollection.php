@@ -7,4 +7,6 @@ use msng\GmoPaymentGateway\Entities\Error;
 class ErrorCollection extends ResponseCollection
 {
     protected $itemClass = Error::class;
+
+    protected $isError = true;
 }
