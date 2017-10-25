@@ -22,7 +22,7 @@ class Card extends ResourceEntity
     {
         $defaultFlag = $this->get(static::DEFAULT_FLAG);
 
-        if ($defaultFlag instanceof DefaultFlag && $defaultFlag->isDefault()) {
+        if ($defaultFlag == DefaultFlag::TRUE) {
             return true;
         }
 

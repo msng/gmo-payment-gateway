@@ -17,6 +17,6 @@ class DefaultFlag extends EnumValue
      */
     public function isDefault()
     {
-        return $this->value === static::TRUE;
+        return $this->value == static::TRUE;
     }
 }
