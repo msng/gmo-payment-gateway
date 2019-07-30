@@ -54,7 +54,6 @@ class ValueMap
         Card::NAME => CardName::class,
         Card::EXPIRE => Expire::class,
         Card::HOLDER_NAME => HolderName::class,
-        Card::DELETE_FLAG => DeleteFlag::class,
 
         CardToken::TOKEN => Token::class,
 
