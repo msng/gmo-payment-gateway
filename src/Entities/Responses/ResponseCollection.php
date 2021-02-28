@@ -53,4 +53,21 @@ abstract class ResponseCollection extends Collection
         return $this->isError;
     }
 
+    /**
+     * @return array
+     */
+    public function toArray()
+    {
+        $array = [];
+
+        foreach ($this->items as $item) {
+            if (method_exists($item, 'toArray')) {
+                $array[] = $item->toArray();
+            } else {
+                $array[] = print_r($item, true);
+            }
+        }
+
+        return $array;
+    }
 }
