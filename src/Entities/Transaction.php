@@ -14,4 +14,6 @@ class Transaction extends ResourceEntity
     const ORDER_ID = 'OrderID';
     const TRAN_DATE = 'TranDate';
     const TRAN_ID = 'TranID';
+    const STATUS = 'Status';
+    const PROCESS_DATE = 'ProcessDate';
 }
