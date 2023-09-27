@@ -3,6 +3,8 @@
 namespace msng\GmoPaymentGateway\Api;
 
 use GuzzleHttp\Client;
+use GuzzleHttp\Exception\GuzzleException;
+use GuzzleHttp\RequestOptions;
 use msng\GmoPaymentGateway\Entities\Error;
 use msng\GmoPaymentGateway\Entities\Requests\Request;
 use msng\GmoPaymentGateway\Entities\Responses\ErrorCollection;
@@ -48,6 +50,10 @@ abstract class Api
      */
     private $httpClient;
 
+    private $defaultOptions = [
+        RequestOptions::TIMEOUT => 60
+    ];
+
     /**
      * Api constructor.
      */
@@ -79,20 +85,6 @@ abstract class Api
     }
 
     /**
-     * @param string $baseUri
-     *
-     * @return Api
-     */
-    private function createClient($baseUri)
-    {
-        $this->httpClient = new Client([
-            'base_uri' => $baseUri
-        ]);
-
-        return $this;
-    }
-
-    /**
      * @param Request $request
      *
      * @return $this
@@ -110,10 +102,11 @@ abstract class Api
 
     /**
      * @param Request $request
-     *
+     * @param array $options
      * @return ResponseCollection|Response
+     * @throws GuzzleException
      */
-    public function send(Request $request = null)
+    public function send(Request $request = null, array $options = [])
     {
         if (!$request) {
             $request = $this->request;
@@ -125,19 +118,50 @@ abstract class Api
                 Error::INFO => 'X00000001'
             ]);
         } else {
+            $options = array_merge($this->defaultOptions, $options, [
+                RequestOptions::FORM_PARAMS => $request->getParamValues()
+            ]);
 
-            $apiResponse = $this->httpClient->request(
-                $this->method,
-                $this->endPoint,
-                [
-                    'form_params' => $request->getParamValues()
-                ]);
+            $apiResponse = $this->httpClient->request($this->method, $this->endPoint, $options);
 
             $responseText = $apiResponse->getBody()->getContents();
             $response = $this->createResponse($responseText);
         }
 
         return $response;
+    }
+
+    /**
+     * @param array $params
+     * @param array $options
+     * @return Response|ResponseCollection
+     * @throws GuzzleException
+     */
+    public static function request(array $params = [], array $options = [])
+    {
+        $api = new static();
+
+        $requestClass = $api->requestClass;
+        $request = new $requestClass($params);
+
+        $api->setRequest($request);
+        $response = $api->send(null, $options);
+
+        return $response;
+    }
+
+    /**
+     * @param string $baseUri
+     *
+     * @return Api
+     */
+    private function createClient($baseUri)
+    {
+        $this->httpClient = new Client([
+            'base_uri' => $baseUri
+        ]);
+
+        return $this;
     }
 
     /**
@@ -157,23 +181,6 @@ abstract class Api
         }
 
         return $result;
-    }
-
-    /**
-     * @param array $params
-     * @return Response|ResponseCollection
-     */
-    public static function request($params = [])
-    {
-        $api = new static();
-
-        $requestClass = $api->requestClass;
-        $request = new $requestClass($params);
-
-        $api->setRequest($request);
-        $response = $api->send();
-
-        return $response;
     }
 
 }
