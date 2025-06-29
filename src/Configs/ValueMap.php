@@ -12,6 +12,7 @@ use msng\GmoPaymentGateway\Entities\Member;
 use msng\GmoPaymentGateway\Entities\Payment;
 use msng\GmoPaymentGateway\Entities\Shop;
 use msng\GmoPaymentGateway\Entities\Site;
+use msng\GmoPaymentGateway\Entities\ThreeDSecure;
 use msng\GmoPaymentGateway\Entities\Transaction;
 use msng\GmoPaymentGateway\Values\Access\AccessId;
 use msng\GmoPaymentGateway\Values\Access\AccessPass;
@@ -35,6 +36,10 @@ use msng\GmoPaymentGateway\Values\Shop\ShopId;
 use msng\GmoPaymentGateway\Values\Shop\ShopPass;
 use msng\GmoPaymentGateway\Values\Site\SiteId;
 use msng\GmoPaymentGateway\Values\Site\SitePass;
+use msng\GmoPaymentGateway\Values\ThreeDSecure\TdFlag;
+use msng\GmoPaymentGateway\Values\ThreeDSecure\TdRequired;
+use msng\GmoPaymentGateway\Values\ThreeDSecure\Tds2Type;
+use msng\GmoPaymentGateway\Values\ThreeDSecure\TdTenantName;
 use msng\GmoPaymentGateway\Values\Transaction\Amount;
 use msng\GmoPaymentGateway\Values\Transaction\Approve;
 use msng\GmoPaymentGateway\Values\Transaction\CheckString;
@@ -97,5 +102,10 @@ class ValueMap
         Client::FIELD_1 => Field::class,
         Client::FIELD_2 => Field::class,
         Client::FIELD_3 => Field::class,
+
+        ThreeDSecure::TD_FLAG => TdFlag::class,
+        ThreeDSecure::TD_TENANT_NAME => TdTenantName::class,
+        ThreeDSecure::TDS_2_TYPE => Tds2Type::class,
+        ThreeDSecure::TD_REQUIRED => TdRequired::class,
     ];
 }
