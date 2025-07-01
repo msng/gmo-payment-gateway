@@ -40,14 +40,18 @@ use msng\GmoPaymentGateway\Values\ThreeDSecure\TdFlag;
 use msng\GmoPaymentGateway\Values\ThreeDSecure\TdRequired;
 use msng\GmoPaymentGateway\Values\ThreeDSecure\Tds2Type;
 use msng\GmoPaymentGateway\Values\ThreeDSecure\TdTenantName;
+use msng\GmoPaymentGateway\Values\Transaction\ACS;
 use msng\GmoPaymentGateway\Values\Transaction\Amount;
 use msng\GmoPaymentGateway\Values\Transaction\Approve;
+use msng\GmoPaymentGateway\Values\Transaction\CallbackType;
 use msng\GmoPaymentGateway\Values\Transaction\CheckString;
 use msng\GmoPaymentGateway\Values\Transaction\Forward;
 use msng\GmoPaymentGateway\Values\Transaction\JobCd;
 use msng\GmoPaymentGateway\Values\Transaction\Method;
 use msng\GmoPaymentGateway\Values\Transaction\OrderId;
 use msng\GmoPaymentGateway\Values\Transaction\ProcessDate;
+use msng\GmoPaymentGateway\Values\Transaction\RedirectUrl;
+use msng\GmoPaymentGateway\Values\Transaction\RetUrl;
 use msng\GmoPaymentGateway\Values\Transaction\Status;
 use msng\GmoPaymentGateway\Values\Transaction\Tax;
 use msng\GmoPaymentGateway\Values\Transaction\TranDate;
@@ -94,6 +98,10 @@ class ValueMap
         Transaction::TRAN_ID => TranId::class,
         Transaction::STATUS => Status::class,
         Transaction::PROCESS_DATE => ProcessDate::class,
+        Transaction::RET_URL => RetUrl::class,
+        Transaction::CALLBACK_TYPE => CallbackType::class,
+        Transaction::ACS => ACS::class,
+        Transaction::REDIRECT_URL => RedirectUrl::class,
 
         Item::CODE => Code::class,
 

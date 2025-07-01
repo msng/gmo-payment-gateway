@@ -168,7 +168,7 @@ abstract class Api
      * @param $responseText
      * @return Response|ResponseCollection
      */
-    private function createResponse($responseText)
+    protected function createResponse($responseText)
     {
         parse_str($responseText, $responseValues);
 

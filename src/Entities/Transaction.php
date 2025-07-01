@@ -16,4 +16,10 @@ class Transaction extends ResourceEntity
     const TRAN_ID = 'TranID';
     const STATUS = 'Status';
     const PROCESS_DATE = 'ProcessDate';
+
+    // 3D Secure specific fields
+    const RET_URL = 'RetUrl';
+    const CALLBACK_TYPE = 'CallbackType';
+    const ACS = 'ACS';
+    const REDIRECT_URL = 'RedirectUrl';
 }
