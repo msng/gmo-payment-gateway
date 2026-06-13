@@ -11,4 +11,5 @@ class Method extends EnumValue
     const ボーナス一括 = '3';
     const ボーナス分割 = '4';
     const リボ = '5';
+    const 未定 = '';
 }
